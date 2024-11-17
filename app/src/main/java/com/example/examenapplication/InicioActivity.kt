@@ -17,17 +17,15 @@ class InicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
 
-        // Ajustar los paddings de la vista principal
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Inicializar componentes
+
         iniciarComponentes()
 
-        // Asignar eventos de clic a los botones
         eventosClic()
     }
 
@@ -43,7 +41,7 @@ class InicioActivity : AppCompatActivity() {
         }
 
         btnSalir.setOnClickListener {
-            finish() // Cierra la actividad actual
+            finish()
         }
     }
 }

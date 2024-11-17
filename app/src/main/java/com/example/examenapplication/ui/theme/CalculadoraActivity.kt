@@ -24,7 +24,6 @@ class CalculadoraActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_calculadora)
 
-        // Ajustar los paddings de la vista principal
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -46,7 +45,7 @@ class CalculadoraActivity : AppCompatActivity() {
     }
 
     private fun eventoClic() {
-        // Botón calcular
+
         btnCalcular.setOnClickListener {
             val base = txtBase.text.toString()
             val altura = txtAltura.text.toString()
@@ -58,11 +57,11 @@ class CalculadoraActivity : AppCompatActivity() {
                     val baseValue = base.toDouble()
                     val alturaValue = altura.toDouble()
 
-                    // Calcular área y perímetro
+
                     val area = baseValue * alturaValue
                     val perimetro = 2 * (baseValue + alturaValue)
 
-                    // Mostrar resultados
+
                     txtArea.setText(area.toString())
                     txtPerimetro.setText(perimetro.toString())
 
@@ -72,7 +71,6 @@ class CalculadoraActivity : AppCompatActivity() {
             }
         }
 
-        // Botón limpiar
         btnLimpiar.setOnClickListener {
             txtBase.text.clear()
             txtAltura.text.clear()
